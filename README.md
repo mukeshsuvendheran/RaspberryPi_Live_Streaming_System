@@ -19,6 +19,7 @@ Power Supply
 Sensors: (RCWL-0516, Temperature, etc.)
 
 📂 Project Structure
+
 RaspberryPi_Live_Streaming_System/
 │
 ├── experiment/ # Experimental scripts and testing code
