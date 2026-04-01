@@ -1,0 +1,45 @@
+{% extends "_master.html" %}
+
+{% block main %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="d-flex justify-content-end">
+            <button id="raspi-cam-1" class="btn btn-primary raspi-cm-viewer">View All Captures</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-8">
+            <div class="card text-bg-dark">
+                <img id="latest-image" src="{{latest}}" class="card-img" alt="">
+                <div class="card-img-overlay">
+                  <p class="card-text"><small>🔴 Live</small></p>
+                </div>
+              </div>
+        </div>
+        <div class="col-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    Featured
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <button id="raspi-cam-3" class="btn btn-primary raspi-cm-viewer">Go somewhere</a>
+                </div>
+                <div class="card-footer text-muted">
+                    2 days ago
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul id="images" style="display: none;">
+    <li><img src="https://picsum.photos/id/1/5000/3333" alt="Picture 1"></li>
+    <li><img src="https://picsum.photos/id/4/5000/3333" alt="Picture 2"></li>
+    <li><img src="https://picsum.photos/id/7/4728/3168" alt="Picture 3"></li>
+</ul>
+
+
+{% endblock %}

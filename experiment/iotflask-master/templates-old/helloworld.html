@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap demo</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.2/viewer.css" integrity="sha512-xWnbrcBaeWCqYtkiyHlwpQyAUM3mc7cJWO4VFWXy4gel3LG5ZOvS517+FbCGdAtCXaaLmHwc+2U8Bz3eeJUNTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+		img {
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div>
+			{% if data.username == "sibidharan" %}
+			<div class="alert alert-success mousetest" role="alert">
+				Welcome {{ data.username }}, you are in {{ data.env }}
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-auto">
+						<button class="btn btn-primary">Add Device</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="card text-center">
+							<div class="card-header">
+								Raspi Cam 1
+							</div>
+							<div class="card-body">
+								<h5 class="card-title">Special title treatment</h5>
+								<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+								<button id="raspi-cam-1" class="btn btn-primary raspi-cm-viewer">View Captures</a>
+							</div>
+							<div class="card-footer text-muted">
+								2 days ago
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card text-center">
+							<div class="card-header">
+								Featured
+							</div>
+							<div class="card-body">
+								<h5 class="card-title">Special title treatment</h5>
+								<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+								<button id="raspi-cam-2" class="btn btn-primary raspi-cm-viewer">Go somewhere</a>
+							</div>
+							<div class="card-footer text-muted">
+								2 days ago
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card text-center">
+							<div class="card-header">
+								Featured
+							</div>
+							<div class="card-body">
+								<h5 class="card-title">Special title treatment</h5>
+								<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+								<button id="raspi-cam-3" class="btn btn-primary raspi-cm-viewer">Go somewhere</a>
+							</div>
+							<div class="card-footer text-muted">
+								2 days ago
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<ul id="images" style="display: none;">
+				<li><img src="https://picsum.photos/id/1/5000/3333" alt="Picture 1"></li>
+				<li><img src="https://picsum.photos/id/4/5000/3333" alt="Picture 2"></li>
+				<li><img src="https://picsum.photos/id/7/4728/3168" alt="Picture 3"></li>
+				<li><img src="{{ data.avatar }}" alt="Picture 3"></li>
+			</ul>
+			{% elif data.username == "root" %}
+			<div class="alert alert-danger" role="alert">
+				You should not run as {{ data.username }}, you are in {{ data.env }}
+			</div>
+			{% endif %}
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.2/viewer.min.js" integrity="sha512-1TCjsgfYd9edJ4mO6sb8rLzhnGpnFR4GazDGVhDekHrOHU7y7vcqGiO+4yW0HIDBoIY/ocbM/BrXxg8dYO6wSQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script>
+		
+		function apiCall(){
+			//do network calls and fetch more images
+			return `
+			<li><img src="https://picsum.photos/id/1/5000/3333" alt="Picture 1"></li>
+			<li><img src="https://picsum.photos/id/4/5000/3333" alt="Picture 2"></li>
+			<li><img src="https://picsum.photos/id/7/4728/3168" alt="Picture 3"></li>
+			<li><img src="https://picsum.photos/id/1/5000/3333" alt="Picture 1"></li>
+			<li><img src="https://picsum.photos/id/4/5000/3333" alt="Picture 2"></li>
+			<li><img src="https://picsum.photos/id/7/4728/3168" alt="Picture 3"></li>
+			`
+		}
+		
+		const images = document.getElementById('images');
+		const viewer = new Viewer(images, {
+			loop: true,
+			interval: 500,
+			view: function(event){
+				console.log((event.detail.index + 1) + " / " +viewer.length);
+				var cur_image = event.detail.index + 1;
+				var length = viewer.length;
+				var leftover = 1;
+				
+				if(length - cur_image <= leftover){
+					console.log("now we can add more images");
+					$(images).append(apiCall());
+					viewer.update();
+				}
+			}
+		});
+
+		$('#raspi-cam-1').on('click', function(e){
+			viewer.show();
+		});
+
+		$(".mousetest").on('mouseenter', function(e){
+			console.log("mouse entered");
+		});
+
+		$(".mousetest").on('mouseleave', function(e){
+			console.log("mouse exited");
+		});
+
+
+
+
+
+	</script>
+</body>
+</html>

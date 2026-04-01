@@ -1,0 +1,23 @@
+{
+    "mongodb_connection_string": "mongodb://sibidharan:gYhsut-6gotzu-mafxov@mongodb.selfmade.ninja:27017/?authSource=users",
+    "mongodb_database": "sibidharan_iotcloud",
+    "secret_key": "Vr4d5lvRh5j6FJ5Cmbzm",
+    "devices": [
+        {
+            "name": "Motion Camera",
+            "id": "mcamera"
+        },
+        {
+            "name": "IP Camera",
+            "id": "ipcamera"
+        },
+        {
+            "name": "Door Bell Sensor",
+            "id": "doorbellsensor"
+        },
+        {
+            "name": "Door Knock Sensor",
+            "id": "doorknocksensor"
+        }
+    ]
+}

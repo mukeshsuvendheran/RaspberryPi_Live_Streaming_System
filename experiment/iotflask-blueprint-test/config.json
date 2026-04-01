@@ -1,0 +1,6 @@
+{
+    "mongodb_connection_string": "mongodb://sibidharan:gYhsut-6gotzu-mafxov@mongodb.selfmade.ninja:27017/?authSource=users",
+    "mongodb_database": "sibidharan_iotcloud",
+    "basename": "/iotcloud",
+    "secret_key": "Vr4d5lvRh5j6FJ5Cmbzm"
+}

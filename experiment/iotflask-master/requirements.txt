@@ -1,0 +1,5 @@
+Flask
+mongogettersetter
+pika
+pymongo
+bcrypt

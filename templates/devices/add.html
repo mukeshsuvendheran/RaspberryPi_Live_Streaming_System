@@ -1,0 +1,26 @@
+<form>
+    <div class="form-group">
+        <label for="device-name">Name</label>
+        <input type="text" class="form-control" id="device-name" placeholder="My Camera - 1">
+    </div>
+    <div class="form-group">
+        <label for="device-api">API Key</label>
+        <select class="form-control" id="device-api">
+          {% for api in apis %}
+          <option value="{{ api.hash }}">{{ api.name }}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="device-type">Type</label>
+        <select class="form-control" id="device-type">
+            {% for type in dtypes %}
+          <option value="{{ type.id }}">{{ type.name }}</option>
+          {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="device-remarks">Remarks</label>
+        <textarea class="form-control" id="device-remarks" rows="2"></textarea>
+    </div>
+</form>
