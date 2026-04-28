@@ -1,5 +1,0 @@
-{
-    "mongodb_connection_string": "mongodb://mukesh:password123@mongodb.selfmade.ninja:27017/?authSource=users",
-    "mongodb_database": "mukesh_iotcloud",
-    "secret_key": "Vr4d5lvRh5j65FJ5Cmbzm"
-}
